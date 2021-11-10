@@ -14,22 +14,44 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button btn_learning=(Button)findViewById(R.id.button);
+        btn_learning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startLearning();
+            }
+        });
+        Button btn_quiz=(Button)findViewById(R.id.button2);
+        btn_quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startQuiz();
+            }
+        });
+
+
+        Button btn_repo = (Button)findViewById(R.id.button3);
+        btn_repo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Auto-generated method stub
+                openRepository();
+            }
+        });
     }
 
-
-    Button btn_repo = (Button)findViewById(R.id.button3);
-    btn_repo.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // TODO Auto-generated method stub
-            String url = "http://www.gobloggerslive.com";
-
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
-        }
-    Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
-    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-    startActivity(intent);
-}
+    void startLearning() {
+        Intent intent=new Intent(this,learning_activity.class);
+        startActivity(intent);
+    }
+    void openRepository() {
+        String url = "http://www.gobloggerslive.com";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+    }
+    void startQuiz(){
+        Intent intent=new Intent(this,Quiz_activity.class);
+        startActivity(intent);
+    }
 }
