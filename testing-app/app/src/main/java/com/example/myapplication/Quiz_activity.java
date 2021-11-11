@@ -19,6 +19,7 @@ public class Quiz_activity extends AppCompatActivity {
             "3. To pronounce neetiyah huruf, sound produced from:",
             "4. To pronounce lisaveyah huruf, sound produced from:",
             "5. To pronounce tarfiyah huruf, sound produced from:"};
+
     String options[][] = {{"A) End of throat", "B) Middle of throat", "C) Start of throat", "D) All of these"},
                           {"A) Base of tongue near Uvula", "B) Portion of tongue near its base", "C) both a and b", "D) none of these"},
                           {"A) Tip of the tongue","B) Middle of tongue","C) Base of the tongue","D) None of these"},
