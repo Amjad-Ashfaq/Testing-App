@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class Quiz_activity extends AppCompatActivity {
                           {"A) Rounded tip of the tongue touching the base of the frontal 8 teeth","B) Rounded tip of the tongue touching the base of the frontal 6 teeth","C) Rounded tip of the tongue touching the base of the frontal 4 teeth","D) All of these"}};
 
     char selected[]={0,0,0,0,0};
-    char answer[] = {'D', 'C','A','C', 'D'};
+    char answer[] = {'D','C','A','C','D'};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,12 @@ public class Quiz_activity extends AppCompatActivity {
         next_btn = (Button) findViewById(R.id.next_btn);
         ques = (TextView) findViewById(R.id.question);
         score_val=(TextView) findViewById(R.id.val);
+
+        ques.setText(question[i]);
+        opt1.setText(options[i][0]);
+        opt2.setText(options[i][1]);
+        opt3.setText(options[i][2]);
+        opt4.setText(options[i][3]);
     }
 
     void clickFunc() {
@@ -80,7 +87,12 @@ public class Quiz_activity extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myview(i);
+                if(i<5)
+                    myview(i);
+                else {
+                    Intent intent=new Intent(Quiz_activity.this,result_activity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
