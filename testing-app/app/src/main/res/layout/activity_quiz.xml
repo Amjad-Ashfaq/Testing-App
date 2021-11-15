@@ -25,27 +25,27 @@
         android:id="@+id/val"
         android:layout_width="100dp"
         android:layout_height="22dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
+        android:background="@color/purple_500"
         android:text="0"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:background="@color/purple_500"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toTopOf="@+id/question"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="324dp"
         android:layout_height="47dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         android:background="@color/purple_500"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,9 +53,9 @@
         android:id="@+id/opt1"
         android:layout_width="259dp"
         android:layout_height="53dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="@+id/question"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/question"
         app:layout_constraintTop_toBottomOf="@+id/question" />
 

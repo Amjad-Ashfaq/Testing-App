@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     void openRepository() {
-        String url = "http://www.gobloggerslive.com";
+        String url = "https://github.com/Amjad-Ashfaq/Testing-App.git";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);

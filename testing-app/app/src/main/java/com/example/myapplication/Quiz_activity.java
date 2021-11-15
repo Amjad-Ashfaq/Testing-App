@@ -35,7 +35,7 @@ public class Quiz_activity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         loadUI();
         clickFunc();
-        myview(i);
+       // myview();
     }
 
     void loadUI() {
@@ -44,14 +44,15 @@ public class Quiz_activity extends AppCompatActivity {
         opt3 = (Button) findViewById(R.id.opt3);
         opt4 = (Button) findViewById(R.id.opt4);
         next_btn = (Button) findViewById(R.id.next_btn);
+        next_btn.setText("Next");
         ques = (TextView) findViewById(R.id.question);
         score_val=(TextView) findViewById(R.id.val);
         result=(TextView) findViewById((R.id.result));
-        ques.setText(question[i]);
-        opt1.setText(options[i][0]);
-        opt2.setText(options[i][1]);
-        opt3.setText(options[i][2]);
-        opt4.setText(options[i][3]);
+        ques.setText(question[0]);
+        opt1.setText(options[0][0]);
+        opt2.setText(options[0][1]);
+        opt3.setText(options[0][2]);
+        opt4.setText(options[0][3]);
     }
 
     void clickFunc() {
@@ -60,6 +61,9 @@ public class Quiz_activity extends AppCompatActivity {
             public void onClick(View v) {
                 v.setBackgroundColor(Color.parseColor("#FF0000"));
                 selected[i]='A';
+                opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
             }
         });
         opt2.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +71,9 @@ public class Quiz_activity extends AppCompatActivity {
             public void onClick(View v) {
                 v.setBackgroundColor(Color.parseColor("#FF0000"));
                 selected[i]='B';
+                opt1.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
             }
         });
         opt3.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +81,9 @@ public class Quiz_activity extends AppCompatActivity {
             public void onClick(View v) {
                 v.setBackgroundColor(Color.parseColor("#FF0000"));
                 selected[i]='C';
+                opt1.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
             }
         });
         opt4.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +91,9 @@ public class Quiz_activity extends AppCompatActivity {
             public void onClick(View v) {
                 v.setBackgroundColor(Color.parseColor("#FF0000"));
                 selected[i]='D';
+                opt1.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
+                opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
             }
         });
 
@@ -88,7 +101,7 @@ public class Quiz_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(i<5)
-                    myview(i);
+                    myview();
                 else {
                     result.setText(score + "/5");
                     Intent intent=new Intent(Quiz_activity.this,result_activity.class);
@@ -98,7 +111,7 @@ public class Quiz_activity extends AppCompatActivity {
         });
     }
 
-    public void myview(int i) {
+    public void myview() {
         if(selected[i]==answer[i]){
             score++;
             score_val.setText(String.valueOf(score));
@@ -110,6 +123,13 @@ public class Quiz_activity extends AppCompatActivity {
             opt2.setText(options[i][1]);
             opt3.setText(options[i][2]);
             opt4.setText(options[i][3]);
+            opt1.setBackgroundColor(Color.parseColor("#FF6200EE"));
+            opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
+            opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
+            opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
+            if(i==5){
+                next_btn.setText("End Quiz");
+            }
         }
     }
 }
