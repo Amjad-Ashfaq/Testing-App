@@ -10,12 +10,13 @@
         android:id="@+id/Home_btn"
         android:layout_width="153dp"
         android:layout_height="70dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="64dp"
         android:text="Home"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="@+id/result"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/share_btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/share_btn"
         app:layout_constraintTop_toBottomOf="@+id/share_btn" />
 
     <TextView
@@ -23,7 +24,7 @@
         android:layout_width="412dp"
         android:layout_height="98dp"
         android:background="@color/purple_500"
-        android:text="Makharij Al-Huruf Quiz Result"
+        android:text="Quiz Result"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/white"
@@ -65,10 +66,12 @@
         android:id="@+id/share_btn"
         android:layout_width="153dp"
         android:layout_height="70dp"
+        android:layout_marginTop="64dp"
         android:text="Share"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="@+id/result"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        tools:layout_editor_absoluteY="286dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

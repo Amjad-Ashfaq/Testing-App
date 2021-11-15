@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,12 +18,16 @@ public class result_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         loadUI();
+        clickFunction();
     }
 
     void loadUI(){
         share_btn=(Button) findViewById(R.id.share_btn);
         result=(TextView) findViewById(R.id.result);
+        result.setText(getIntent().getStringExtra("scores").concat("/5"));
         Home_btn=(Button) findViewById(R.id.Home_btn);
+        share_btn.setBackgroundColor(Color.parseColor("#FF6200EE"));
+        Home_btn.setBackgroundColor(Color.parseColor("#FF6200EE"));
     }
 
     void clickFunction(){

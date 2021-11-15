@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void startLearning() {
-        Intent intent=new Intent(this,learning_activity.class);
+        Intent intent=new Intent(MainActivity.this, learning_activity.class);
         startActivity(intent);
     }
     void openRepository() {
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     void startQuiz(){
-        Intent intent=new Intent(this,Quiz_activity.class);
+        Intent intent=new Intent(MainActivity.this, Quiz_activity.class);
         startActivity(intent);
     }
 }

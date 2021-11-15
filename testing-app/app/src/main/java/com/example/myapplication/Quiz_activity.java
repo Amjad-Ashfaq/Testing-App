@@ -7,8 +7,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class Quiz_activity extends AppCompatActivity {
@@ -35,7 +33,6 @@ public class Quiz_activity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         loadUI();
         clickFunc();
-       // myview();
     }
 
     void loadUI() {
@@ -53,6 +50,11 @@ public class Quiz_activity extends AppCompatActivity {
         opt2.setText(options[0][1]);
         opt3.setText(options[0][2]);
         opt4.setText(options[0][3]);
+
+        opt1.setBackgroundColor(Color.parseColor("#FF6200EE"));
+        opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
+        opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
+        opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
     }
 
     void clickFunc() {
@@ -100,12 +102,13 @@ public class Quiz_activity extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i<5)
+                if(i<4)
                     myview();
                 else {
-                    result.setText(score + "/5");
+                    myview();
                     Intent intent=new Intent(Quiz_activity.this,result_activity.class);
-                    startActivity(intent);
+                    intent.putExtra("scores", String.valueOf(score));
+                    Quiz_activity.this.startActivity(intent);
                 }
             }
         });
@@ -117,7 +120,7 @@ public class Quiz_activity extends AppCompatActivity {
             score_val.setText(String.valueOf(score));
         }
         i++;
-        if (question[i] != null) {
+        if (i<5) {
             ques.setText(question[i]);
             opt1.setText(options[i][0]);
             opt2.setText(options[i][1]);
@@ -127,7 +130,7 @@ public class Quiz_activity extends AppCompatActivity {
             opt2.setBackgroundColor(Color.parseColor("#FF6200EE"));
             opt3.setBackgroundColor(Color.parseColor("#FF6200EE"));
             opt4.setBackgroundColor(Color.parseColor("#FF6200EE"));
-            if(i==5){
+            if(i==4){
                 next_btn.setText("End Quiz");
             }
         }
