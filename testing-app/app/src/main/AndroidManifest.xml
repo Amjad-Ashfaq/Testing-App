@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".result_activity"
+            android:exported="false" />
+        <activity
             android:name=".learn_huruf"
             android:exported="false" />
         <activity

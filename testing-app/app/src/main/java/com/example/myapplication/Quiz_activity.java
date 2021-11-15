@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class Quiz_activity extends AppCompatActivity {
     Button opt1, opt2, opt3, opt4, next_btn;
-    TextView ques, score_val;
+    TextView ques, score_val, result;
     int i = 0, score=0;
     String question[] = {"1. To pronounce halqiyah huruf, sound produced from:",
             "2. To pronounce lahatiyah huruf, sound produced from:",
@@ -46,7 +46,7 @@ public class Quiz_activity extends AppCompatActivity {
         next_btn = (Button) findViewById(R.id.next_btn);
         ques = (TextView) findViewById(R.id.question);
         score_val=(TextView) findViewById(R.id.val);
-
+        result=(TextView) findViewById((R.id.result));
         ques.setText(question[i]);
         opt1.setText(options[i][0]);
         opt2.setText(options[i][1]);
@@ -90,6 +90,7 @@ public class Quiz_activity extends AppCompatActivity {
                 if(i<5)
                     myview(i);
                 else {
+                    result.setText(score + "/5");
                     Intent intent=new Intent(Quiz_activity.this,result_activity.class);
                     startActivity(intent);
                 }
